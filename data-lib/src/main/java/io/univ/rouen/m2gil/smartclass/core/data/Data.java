@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.web.ResourceProperties;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -21,7 +22,7 @@ public class Data {
 
     private String value;
 
-    private DateTimeFormat DateTime;
+    private LocalDateTime DateTime;
 
     public Long getId() {
         return id;
@@ -47,11 +48,11 @@ public class Data {
         this.value = value;
     }
 
-    public DateTimeFormat getDateTime() {
+    public LocalDateTime getDateTime() {
         return DateTime;
     }
 
-    public void setDateTime(DateTimeFormat dateTime) {
+    public void setDateTime(LocalDateTime dateTime) {
         DateTime = dateTime;
     }
 }
