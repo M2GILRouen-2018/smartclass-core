@@ -4,6 +4,7 @@ package io.univ.rouen.m2gil.smartclass.core.data;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import org.springframework.boot.autoconfigure.web.ResourceProperties;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -13,44 +14,44 @@ public class Data {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    protected Long id;
+    private Long id;
 
-    protected Long dataProviderId;
+    private Long dataProviderId;
 
 
-    protected String value;
+    private String value;
 
-    protected Date DateTime;
+    private DateTimeFormat DateTime;
 
     public Long getId() {
         return id;
-    }
-
-    public Long getDataProviderId() {
-        return dataProviderId;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    public Date getDateTime() {
-        return DateTime;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
 
+    public Long getDataProviderId() {
+        return dataProviderId;
+    }
+
     public void setDataProviderId(Long dataProviderId) {
         this.dataProviderId = dataProviderId;
+    }
+
+    public String getValue() {
+        return value;
     }
 
     public void setValue(String value) {
         this.value = value;
     }
 
-    public void setDateTime(Date dateTime) {
+    public DateTimeFormat getDateTime() {
+        return DateTime;
+    }
+
+    public void setDateTime(DateTimeFormat dateTime) {
         DateTime = dateTime;
     }
 }
